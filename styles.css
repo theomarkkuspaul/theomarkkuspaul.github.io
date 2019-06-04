@@ -1,0 +1,27 @@
+html, body {
+  height: 100%;
+}
+
+html {
+  background: linear-gradient(rgba(0,227,183, 0.15), rgba(0,227,183, 0.15)), url('/assets/images/wellington-waterfront.jpg') no-repeat center center fixed;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  color: white;
+  margin: auto;
+  font-size: 3rem;
+  font-family: Helvetica Neue, Sans Serif, Times New Roman;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
