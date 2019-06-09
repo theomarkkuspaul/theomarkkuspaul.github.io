@@ -2,10 +2,6 @@ html, body {
   height: 100%;
 }
 
-html {
-  background: linear-gradient(rgba(0,227,183, 0.15), rgba(0,227,183, 0.15)), url('/assets/images/wellington-waterfront.jpg') no-repeat center center fixed;
-}
-
 body {
   margin: 0;
 }
