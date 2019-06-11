@@ -3,9 +3,8 @@
   setHomepageImage();
 })();
 
-
 function setHomepageImage () {
-  const LAST_IMAGE_ID = 20;
+  const LAST_IMAGE_ID = 21;
 
   const imageId = Math.floor(Math.random() * LAST_IMAGE_ID) + 1
   const imagePath = `assets/images/${imageId}.jpg`;
