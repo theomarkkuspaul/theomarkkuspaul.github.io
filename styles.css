@@ -8,7 +8,6 @@ body {
 
 h1 {
   color: white;
-  margin: auto;
   font-size: 3rem;
   font-family: Helvetica Neue, Sans Serif, Times New Roman;
   letter-spacing: 7px;
@@ -17,7 +16,27 @@ h1 {
 
 .container {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   height: 100%;
+}
+
+.container > br {
+  width: 100%;
+  content: '';
+}
+
+.container button {
+  text-transform: uppercase;
+  height: 4rem;
+  width: 10rem;
+  font-weight: bold;
+  background: none;
+  cursor: pointer;
+  color: white;
+  font-size: 1.5rem;
+  border: 5px solid white;
+  margin: auto;
+  display: block;
 }

@@ -1,7 +1,15 @@
 
 (() => {
   setHomepageImage();
+  handleRefreshButtonClick();
 })();
+
+function handleRefreshButtonClick () {
+  document.getElementById('refresh-button').addEventListener('click', event => {
+    // Refresh the page
+    window.location.reload();
+  });
+}
 
 function setHomepageImage () {
   const LAST_IMAGE_ID = 21;
