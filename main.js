@@ -1,4 +1,4 @@
-const LAST_IMAGE_ID = 21;
+const LAST_IMAGE_ID = 30;
 
 (() => {
   setHomepageImage();
