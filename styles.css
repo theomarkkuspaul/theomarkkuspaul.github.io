@@ -40,3 +40,16 @@ h1 {
   margin: auto;
   display: block;
 }
+
+.music {
+  max-width: 1200px;
+  margin: auto !important;
+}
+
+.black {
+  color: black;
+}
+
+.album img {
+  padding: 2rem;
+}
