@@ -1,0 +1,4 @@
+
+/* https://css-tricks.com/snippets/css/scale-on-hover-with-webkit-transition/ */
+.grow-text { transition: font-size .2s ease-in-out; }
+.grow-text:hover { transform: scale(1.1); }
