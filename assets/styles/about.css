@@ -70,10 +70,6 @@ input[type="submit"] {
   background-color: #e4b500;
 }
 
-input[type="submit"]:hover {
-  cursor: pointer;
-}
-
 textarea {
   min-width: 100px;
   width: 100%;
