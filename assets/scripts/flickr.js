@@ -18,7 +18,7 @@
 
     const photoEndpoint = constructPhotoFlickrEndpoint(farmId, serverId, photoId, secret);
 
-    document.getElementsByTagName('html')[0].style.background = `linear-gradient(rgba(0,227,183, 0.15), rgba(0,227,183, 0.15)), url("${photoEndpoint}") no-repeat center fixed`; 
+    document.getElementsByTagName('html')[0].style.background = `url("${photoEndpoint}") no-repeat center fixed`;
   });
 })();
 
