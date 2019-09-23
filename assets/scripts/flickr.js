@@ -1,7 +1,7 @@
 
 (function () {
-
-  const FLICKR_ENDPOINT = 'https://www.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=2851eb1530eb2b115c64c1577418dfa6&user_id=183854656%40N05&format=json&nojsoncallback=1&per_page=200';
+  const perPage = 400;
+  const FLICKR_ENDPOINT = `https://www.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=2851eb1530eb2b115c64c1577418dfa6&user_id=183854656%40N05&format=json&nojsoncallback=1&per_page=${perPage}`;
 
   fetch(FLICKR_ENDPOINT)
   .then(resp => {
