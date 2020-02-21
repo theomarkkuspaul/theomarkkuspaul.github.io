@@ -1,0 +1,219 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #65e3ff;
+  font-family: 'American Typewriter';
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+mark {
+  padding: 0.2rem;
+  background-color: #ffe065;
+  display: inline-block;
+  font-size: inherit;
+  text-decoration: inherit;
+}
+
+.controls {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.timer {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+button {
+  border: none;
+  text-align: center;
+  background-color: white;
+  background: none;
+}
+
+button img {
+  height: 100px;
+  width: 100px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .housing {
+    padding-top: 5rem;
+  }
+
+  .record {
+    margin: auto;
+    height: 300px;
+    width: 300px;
+    background-color: black;
+  }
+
+  .label {
+    height: 150px;
+    width: 150px;
+    position: relative;
+    background: url('/assets/images/street.jpg');
+    background-size: cover;
+    top: 25%;
+    left: 25%;
+    display: flex;
+  }
+
+  .hole {
+    height: 15px;
+    width: 15px;
+    background-color: white;
+    margin: auto;
+  }
+
+  .top-hole {
+    position: absolute;
+    left: 36%;
+    top: 12%;
+  }
+
+  .left-hole {
+    position: absolute;
+    top: 44%;
+    left: 13%;
+  }
+
+  .right-hole {
+    position: absolute;
+    top: 44%;
+    left: 58%;
+  }
+
+  .label .text {
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    text-align: center;
+  }
+
+  .label .text h2, h1 {
+    margin-top: 0;
+    font-size: 0.8rem;
+  }
+
+  a {
+    font-size: 0.8rem;
+  }
+
+  .credit .fas {
+    font-size: 3rem;
+  }
+}
+
+
+/* Desktop */
+@media (min-width: 768px) {
+  .housing {
+    padding-top: 1rem;
+  }
+  
+  .record {
+    margin: auto;
+    height: 600px;
+    width: 600px;
+    background-color: black;
+  }
+
+  .label {
+    height: 300px;
+    width: 300px;
+    position: relative;
+    background: url('/assets/images/street.jpg');
+    background-size: cover;
+    top: 25%;
+    left: 25%;
+    display: flex;
+  }
+
+  .hole {
+    height: 15px;
+    width: 15px;
+    background-color: white;
+    margin: auto;
+  }
+
+  .top-hole {
+    position: absolute;
+    left: 33%;
+    top: 4%;
+  }
+
+  .left-hole {
+    position: absolute;
+    top: 44%;
+    left: 16%;
+  }
+
+  .right-hole {
+    position: absolute;
+    top: 44%;
+    left: 58%;
+  }
+
+  .label .text {
+    height: 320px;
+    width: 320px;
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    text-align: center;
+  }
+
+  .label .text h2 {
+    margin-top: 0;
+    font-size: 0.8rem;
+  }
+
+  a {
+    font-size: 1.5rem;
+  }
+}
+
+.record {
+  background-color: #ff65a0;
+}
+
+.record a {
+  font-weight: bold;
+  text-decoration-thickness: 0.2rem;
+}
+
+#pause {
+  display: none;
+}
+
+p {
+  font-weight: bold;
+  color: #ffe065;
+}
+
+.credit a {
+  color: #ffe065;
+}
+
+.credit {
+  text-align: center;
+  margin-top: 35px;
+}
