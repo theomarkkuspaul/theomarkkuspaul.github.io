@@ -1,4 +1,4 @@
 #! /bin/bash
 
 echo 'Running web server'
-python -m http.server 8000
+http-server -p 8000
