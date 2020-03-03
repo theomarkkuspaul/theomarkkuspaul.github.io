@@ -1,16 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Prevent mobile double tap or pinch zoom -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="viewport" content="width=device-width" />
   <link href="https://fonts.googleapis.com/css?family=Podkova&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" type="text/css" href="assets/styles/cursor.css">
   <link rel="stylesheet" type="text/css" href="assets/styles/fonts.css">
+  <link rel="stylesheet" type="text/css" href="assets/styles/record.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/43fd5da402.js" crossorigin="anonymous"></script>
   <title>Theo Markkus Paul</title>
 </head>
 <body>
-  <div class="container">
-    <h1 class="title">Theo Markkus Paul</h1>
+  <div class="housing">
+    <div id="rotate" class="record circle spinning">
+      <div class="label circle">
+        <div class="top-hole">
+          <h1><mark>Theo<br> Paul</mark></h1>
+        </div>
+
+        <div class="left-hole">
+          <a href="/about">
+            <mark>About</mark>
+          </a>
+        </div>
+
+        <div class="hole circle"></div>
+
+        <div class="right-hole">
+          <a href="/projects">
+            <mark>Projects</mark>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <p class="timer">00:00</p>
+
+      <button id="play" class="button">
+        <img src="assets/images/play-button-yellow.svg" alt="Play">
+      </button>
+
+      <button id="pause" class="button">
+        <img src="assets/images/pause-button-yellow.svg" alt="Pause">
+      </button>
+    </div>
   </div>
-  <script src="/assets/scripts/flickr.js"></script>
+
+  <div class="credit">
+    <a href="https://soundcloud.com/amarmanden/deep-rugged" target="_blank">
+      <i class="fas fa-music"></i>
+    </a>
+  </div>
+
+  <script type="text/javascript" src="/assets/scripts/record.js"></script>
 </body>
 </html>

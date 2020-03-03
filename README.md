@@ -1,9 +1,5 @@
 ## Running dev server
 
-`$ python -m SimpleHTTPServer 8080`
-
-or better yet, from the root of the project
-
 `$ bin/server`
 
 visit http://localhost:8080
