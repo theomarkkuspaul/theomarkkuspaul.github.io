@@ -210,6 +210,9 @@ p {
 }
 
 .credit {
+  position: absolute;
+  top: 75%;
+  left: 45%;
   text-align: center;
   margin-top: 25px;
 }
