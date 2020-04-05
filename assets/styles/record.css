@@ -113,8 +113,13 @@ h1 {
     font-size: 0.8rem;
   }
 
+  .credit {
+    top: 67%;
+    left: 44%;
+  }
+
   .credit .fas {
-    font-size: 3rem;
+    font-size: 1rem;
   }
 }
 
@@ -185,6 +190,11 @@ h1 {
   a {
     font-size: 1.5rem;
   }
+
+  .credit {
+    top: 75%;
+    left: 45%;
+  }
 }
 
 .record {
@@ -211,8 +221,6 @@ p {
 
 .credit {
   position: absolute;
-  top: 75%;
-  left: 45%;
   text-align: center;
   margin-top: 25px;
 }
