@@ -6,23 +6,13 @@ body {
 .about {
   margin: auto;
   text-align: center;
-  padding-right: 3rem;
-}
-
-.half {
-  float: left;
 }
 
 img {
   max-height: 400px;
 }
 
-.center {
-  text-align: center;
-}
-
 .content {
-  padding: 2rem;
   vertical-align: middle;
   display: flex;
   flex-direction: column;
@@ -34,27 +24,10 @@ img {
   text-align: center;
 }
 
-.above-the-fold p {
-  margin: 3rem;
+.above-the-fold p:first {
+  margin-bottom: 3rem;
 }
 
-.hidden {
-  display: none;
-}
-
-.contact {
-  padding-left: 3rem;
-  padding-bottom: 3rem;
-  padding-top: 3rem;
-  border-left: 0.20rem solid black;
-}
-
-.contact-title {
-  text-decoration: underline;
-  margin: 0;
-}
-
-.about-title {
-  margin: 0;
-  padding-top: 2rem;
+.above-the-fold p:last {
+  margin-top: 3rem;
 }
