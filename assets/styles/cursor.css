@@ -1,4 +1,4 @@
 
-body, *:hover {
+html, body, *:hover {
   cursor: url('/assets/images/churros.png'), auto;
 }
