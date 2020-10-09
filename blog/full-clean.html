@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Django Model-Layer Data Validation</title>
+
+  <link rel="stylesheet" type="text/css" href="/assets/styles/prism.css">
+</head>
+<body>
+  <h1>Django Validations on the Model-Layer</h1>
+
+  <p>
+    You're a developing a Django Rest Framework (DRF) application and you want to rest assured that the data persisting from application is clean and sanitized. Conventionally you would handle cleaning your data through Django's terse and well-featured <a href="https://docs.djangoproject.com/en/3.1/ref/forms/">forms</a> library. In this case you ere on the side of caution and opt to add a layer of validation directly on the model.
+  </p>
+
+  <p>
+    Within your model definition you add <code class="language-python">max_length</code> onto your <code class="language-python">CharField</code>s and add <code class="language-python">default</code>s to your <code class="language-python">IntegerField</code>s as well as any <code class="language-python">EmailField</code>s. One validation that is essential for you is to make sure that certain fields demand a text value, come what may. For example, you have a Character model that deserves a <code class="language-python">name</code>, or let's pretend you're working with <code class="language-python">TennisBall</code> class that needs a <code class="language-python">brand</code> assigned.
+  </p>
+
+  <p>
+    You find out that <code class="language-python">CharField</code> (and most other text-based field in DRF) supports <code class="language-python">null</code> and <code class="language-python">blank</code> attributes and that they are <code class="language-python">False</code> by default. You follow-up on the docs and find out that by these parameters having <code class="language-python">False</code> as the default value means that a value is required in order to pass the validation. It's all sounding so perfect. Without using Django's <a href="https://docs.djangoproject.com/en/3.1/ref/forms/">forms</a> library as another layer of data integrity you find out these fields with <code class="language-python">null</code> and <code class="language-python">blank</code> don't actually kick-in and your database starts filling up with empty objects.
+  </p>
+
+  <p>
+    Disaster! You instantly rush to StackOverflow and discover that these model field validators are reflected through form validation, <strong>but not on the model</strong>! You are disheartened, but not defeated.
+  </p>
+
+  <p>
+    You chase up the docs again and find the <code class="language-python">full_clean</code> method. A lead. Within the Django console you play around with your model.
+  </p>
+
+  <ol>
+    <li>You first instantiate an object... store it in a variable.</li>
+    <li>You call <code class="language-python">save</code> on that variable and... ah shoot, the console saved when you thought the validation would kick in. Back to square one.</li>
+    <li>You instantiate another object... store that value in a variable named similarly except with a <code class="language-python">_again</code> or <code class="language-python">_2</code> appended.</li>
+    <li>You learn from your mistake and call <code class="language-python">full_clean</code> on the var and... a validation exception is raised! <strong>Bullseye.</strong></li>
+    <li>You find this unbelievable and fist-pump softly under your desk. <i>Yessss.</i></li>
+  </ol>
+
+  <p>
+    You go the extra step and patch your <code class="language-python">save</code> method to call <code class="language-python">full_clean</code>. Maybe a little overkill... at least it stops you (the application!) from calling `create` and all havoc letting loose.
+
+    <pre>
+      <code class="language-python">
+from django.db import models
+
+
+class TennisBall(models.Model):
+    brand = models.CharField(max_length=254, null=False)
+    bounce_count = models.IntegerField(default=0)
+
+    def save(self, *args, **kwargs):
+        self.full_clean()  # enforce `null` validation on `brand` field.
+        return super().save()
+      </code>
+    </pre>
+  </p>
+
+  <p>You sit back 💆‍♀️, relax 🍵, and ship your app. 🚀</p>
+
+  <script type="text/javascript" src="/assets/scripts/prism.js"></script>
+</body>
+</html>
