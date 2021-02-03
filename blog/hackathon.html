@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Django Model-Layer Data Validation</title>
+</head>
+<body>
+  <h1>Hack Attack ⚡️👨‍💻</h1>
+
+  <p>
+    I have always been excited by challenges that must be completed in short timespans. Cleaning a kitchen before guests arrive, participating in a 48-hour film competition, the mad bustle of bussing at a nightclub. It's the thrill of finishing before time expires, buzzer-beating.
+
+    After chatting with a co-worker, and learning about all the various "side hustles" he has put together, I felt inspired to give it a go myself. So, I set myself a challenge: deploy an app built over a weekend AKA do a self-hackathon!
+
+    The rules were simple:
+    * Rule 1: By the end of the hackathon be proud of what I had built.
+    * Rule 2: It must be live before time is up.
+    * Rule 3: Document my thoughts once every two hours.
+    * Rule 4: Take a break (no matter how small or long) every hour.
+
+    I have competed in hackathons before, this gave me a boost of confidence in knowing what and what wasn't realistic over the weekend. Friday 7:30pm was game time and I set off straight away. My app idea was to build a platform that would aggregate data from the three Vancouver ski resort mountains: Cypress, Grouse, and Seymour.
+
+    To implement this posed many challenges, most significantly was the fact that Cypress and Seymour did not expose an API to scrape their booking reservation information (thanks Grouse for exposing one 🦅 ). At any rate, per my second rule I deployed the app and gave myself a pat on the back. If I were to do this again, I would take more breaks in the outdoors. For me nothing clears out the head better than getting some Vitamin D.
+
+    You can find what I built here: 104.248.76.171:8080
+
+    Thanks for reading!
+
+    P.S. Here are the notes (documentation) I took:
+
+    WHY TF - A challenge. Let's see I can achieve with focussed energy and attention on a specific project. I am the beginning, middle, and end. After all is said and done, let's ship what I have and see what happens when people have access to it. Perhaps I could even make some side coin from it.
+
+    HOW TF - Using PWA technologies, develop a web app that is mobile and desktop friendly, is simple-to-use, and delivers on what it promises.
+
+    WHAT TF - Create a one-stop shop that aggregates snow report, availability demand, and snow cam information to better plan trips to Vancouver's big 3: Cypress, Grouse, and Seymour.
+
+    As its a hackathon, the plan is to see what I can achieve in a limited amount of time. The ultimate goal is to learn how to get my feet on the ground, product-wise, and go through an experience I haven't really faced personally.
+
+    Starting at 7:30. Already have figured out Grouse's API to get their Gondola availability. Still working on Cypress' booking calendar -- couldn't devise their API, scrape the page
+
+    Feeling good. Set a few boundaries for myself, let's see how well I follow them. Think the philosophy to keep in the front of my mind is that time is of the essence.
+
+    Okay Cypress booking cal, please don't screw me over.
+
+    JS Dom here we go
+
+    So we can scrape data from seymour and cypress calendars, clicking to scroll to the next week oh boy strap in
+
+    Able to scroll along the calendar and retrieve prices for each of the days.
+
+    Do we want to grab which times are available during the day?
+
+    First break 10:30pm. Banana muffin time
+
+    Now we know how to get the data, how do we store it?
+
+    ITs 11pm, mongo seems the way togo to track availability
+
+    11:30 SEymour website seems to not wanna play ball any more. We've got cypress data flowing into db. Tomorrow: Parse Grouse data and store. Retrieve data from db and display on webpage. Look into simple calendar library (flex box?)
+
+    10:17am saturday. Porridge down and a coffee sipping. Let's get to it.
+
+    Mt seymour loads through the scrapper again. Hooray!
+
+    TODO: Parse each day (cypress and seymour) and fetch each timeslot + price of ts
+
+    Promises my old friend. Looping through the week clicking each date to scrape the available times slots proves a great challenge as the promises don't want to resolve properly in the iterator.
+
+    12:25 run time
+
+    back at it 2pm post run
+
+    aquemini
+
+    Able to scrape each day along the calendar week. Having problems persisting each object.....
+
+    Data is coming through, albeit inconsistently. It's quarter to five and I'm getting hungry. It is discouraging to run the crawler script and watch the e2e process fail. That said, it makes those Eureka moments oh so rewarding.
+
+    How could I forget the cypress site doesn't actually display the available time slots within the calendar!
+
+    Sick of dealing with mongo straight up, pulling out the ODM (Mongoose)
+
+    Struggles with the mongoose connection session. Seem to have figured out a solution that persists in a single session.
+
+    Starting on the web server. Found this nifty utility called express-generator. Already up and running!
+
+    Managed to populate Timeslots with its associated day. On the other hand couldn't seem to associate a day with its many Timeslots. We can work with this
+
+    Send down the Timeslots from the heavens!
+
+    Please vue-cli app, may I have a SPA app?
+
+    In bed now, screwing around with the data still. Oh great more errors
+
+    The poor mongo db, its been dumped so many times now 😢
+
+    normalisation = the separation between two related data objects
+
+    Wrapping it up for the night. Spent probably a bit too much on data scraping and data modeling. Bit more of that tomorrow and then onto putting together the front end. Learnt a lot today.
+
+    Okay here we go for the final day. Just gonna jump straight into it, coffee in hand ready for action.
+
+    Let's try converting the crawled timeslots into Date format so its easier to order them.
+
+    Fixing dryer
+
+    Dryer "fixed"
+
+    Alrighty we have all the sessions from all three mountains on a single page!
+
+    Just finished lunch, had troubles picking Vue js component library since most of them aren't up to scratch with VueJS v3.
+
+    Ah so I'm adding the 30 minute increment too soon when I parse the Grouse API
+
+    Okay some big questions are coming up around how we can deploy this:
+
+    * How to run the crawler regularly?
+    * Where to host the backend?
+    * Where to host the frontend?
+  </p>
+
+</body>
+</html>
