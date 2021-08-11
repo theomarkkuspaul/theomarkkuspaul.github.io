@@ -32,7 +32,7 @@
   <script>
 
 kaboom({
-  ...{"fullscreen":false,"width":500,"height":500,"scale":2,"startScene":"main","debug":true,"clearColor":"black","version":"0.5.0"},
+  ...{"fullscreen":true,"width":500,"height":500,"scale":3,"startScene":"main","debug":true,"clearColor":"black","version":"0.5.0"},
   global: true,
   plugins: [ peditPlugin, asepritePlugin, kbmspritePlugin ],
 });
@@ -56,6 +56,9 @@ const FROG_MOVE_SPEED = 12;
 const FROG_STARTING_X = 108;
 const FROG_STARTING_Y = 166;
 const MOVE_SPEED = 20;
+
+const MAP_STARTING_X = 10;
+const MAP_STARTING_Y = 10;
 const CELL_WIDTH = 12;
 const CELL_HEIGHT = 12;
 const COUNTDOWN_TIME = 60; // seconds
@@ -114,7 +117,7 @@ const map = addLevel([
 ], {
   width: 12,
   height: 12,
-  pos: vec2(10, 10),
+  pos: vec2(MAP_STARTING_X, MAP_STARTING_Y),
   "=": [
     color(0,0,0),
     rect(CELL_WIDTH, CELL_HEIGHT),
